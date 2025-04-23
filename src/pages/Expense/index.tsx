@@ -21,10 +21,10 @@ import {
 
 const Expenses = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isEditOpen, setIsEditOpen] = useState(false);
-  const [loadingConfirm, setLoadingConfirm] = useState(false);
+  const [isEditOpen] = useState(false);
+  const [loadingConfirm] = useState(false);
   //   const [expenses, setExpenses] = useState<Expense[]>([]);
-  const [selectedExpense, setSelectedExpense] = useState<Expense>();
+  const [selectedExpense] = useState<Expense>();
   const dispatch: any = useDispatch();
 
   const { expenses, loading } = useSelector(

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUserAction } from "../action/user.action";
 import { createExpenseAction, getExpensesAction } from "../action/expense.action";
 
 const initialState = {

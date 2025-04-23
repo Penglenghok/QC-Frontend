@@ -8,14 +8,14 @@ type Props = {
     handleCancel: () => void;
     groupName: string
     setGroupName: (name: string) => void;
-    availableMembers: Member[];
+    availableMembers: any[];
 };
 
 const GroupModal = (props: Props) => {
     const { isModalOpen, handleOk, handleCancel, setGroupName, availableMembers, groupName } = props;
     const [form] = Form.useForm();
     const [selectedMemberId, setSelectedMemberId] = useState<number | undefined>(undefined);
-    const [addedMembers, setAddedMembers] = useState<Member[]>([]);
+    const [addedMembers, setAddedMembers] = useState<any[]>([]);
     const [membersError, setMembersError] = useState<string | null>(null);
 
     const onOk = () => {

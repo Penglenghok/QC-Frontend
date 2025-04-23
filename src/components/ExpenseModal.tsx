@@ -27,11 +27,10 @@ const ExpenseModal = ({
   cancelTxt,
   submitTxt,
   loading = false,
-  expense,
   members = [],
 }: ExpensePopupProps) => {
   const [amount, setAmount] = useState<number>(0);
-  const [checkedMembers, setCheckedMembers] = useState<string[]>(
+  const [checkedMembers] = useState<string[]>(
     members.filter((member) => member.isChecked).map((member) => member.id)
   );
   const [distributedAmounts, setDistributedAmounts] = useState<{
@@ -43,9 +42,9 @@ const ExpenseModal = ({
     formRef.current?.submit();
   };
 
-  const handleCheckboxChange = (checkedValues: any) => {
-    setCheckedMembers(checkedValues);
-  };
+  // const handleCheckboxChange = (checkedValues: any) => {
+  //   setCheckedMembers(checkedValues);
+  // };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value) || 0;

@@ -1,13 +1,4 @@
-import {
-  Button,
-  Card,
-  Divider,
-  Form,
-  Input,
-  Modal,
-  Row,
-  Select,
-} from "antd";
+import { Button, Card, Divider, Form, Input, Modal, Row, Select } from "antd";
 import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -32,7 +23,7 @@ export default function Home({}: Props) {
   const { groups } = useSelector((state: IReducers) => state.group);
   const { users } = useSelector((state: IReducers) => state.user);
 
-  const [group, setGroup] = useAtom(selectedGroupAtom);
+  const [, setGroup] = useAtom(selectedGroupAtom);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -44,7 +35,7 @@ export default function Home({}: Props) {
     const participants = formValues?.users?.map((item: any) =>
       JSON.parse(item)
     );
-    const payload: IGroup = {
+    const payload: any = {
       name: formValues.name,
       users: [user, ...participants.filter((item: any) => item.id !== user.id)],
     };

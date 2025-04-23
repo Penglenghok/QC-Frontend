@@ -1,4 +1,4 @@
-import { Button, Divider, Form, Input, Row } from "antd";
+import { Button, Divider, Form, Input } from "antd";
 import { useDispatch } from "react-redux";
 import { registerAction } from "../../redux/action/auth.action";
 import { useNavigate } from "react-router-dom";
