@@ -1,4 +1,4 @@
-# Use Node to build the app
+# Stage 1: Build Vite app
 FROM node:20-alpine AS builder
 
 WORKDIR /app
@@ -9,19 +9,17 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Use a lightweight Node image to serve the app
+# Stage 2: Serve with `serve` on port 9090
 FROM node:20-alpine
 
-# Install the 'serve' package globally
 RUN npm install -g serve
 
 WORKDIR /app
 
-# Copy build output from builder
-COPY --from=builder /app/dist ./build
+# Copy Vite's build output (which is in `dist/`)
+COPY --from=builder /app/dist ./dist
 
-# Expose your desired port
 EXPOSE 9090
 
-# Use serve to run the static site on port 9090
-CMD ["serve", "-s", "dist", "-l", "9090"]
+# `--single` ensures React routing works (fallback to index.html)
+CMD ["serve", "-s", "dist", "-l", "9090", "--single"]
