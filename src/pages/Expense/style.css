@@ -1,0 +1,107 @@
+body {
+    background-color: #333;
+    color: white;
+  }
+
+  .container{
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container-sm {
+    width: 800px !important;
+    margin-inline: auto;
+  }
+  .relative {
+    position: relative;
+  }
+  .h-full {
+    min-height: 100vh;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-white {
+    color: white;
+  }
+  .py-5 {
+    padding-block: 20px;
+  }
+  .mt-5 {
+    margin-top: 20px;
+  }
+  .mb-0 {
+    margin-bottom: 0px;
+  }
+  .form_heading {
+    margin-bottom: 16px;
+  }
+  .floating_button {
+    cursor: pointer;
+    margin-inline: auto;
+    position: fixed;
+    bottom: 36px;
+    left: 0px;
+    right: 0px;
+    width: 52px;
+    height: 52px;
+    background-color: rgb(25, 78, 213);
+    border-radius: 40px;
+    box-shadow: 0px 2px 12px -3px rgba(106, 125, 164, 0.2), 0px 8px 24px -3px rgba(138, 159, 203, 0.1);
+  }
+  .floating_button:hover {
+    background-color: rgb(38, 84, 198);
+    box-shadow: 0px 2px 12px -3px rgba(244, 244, 244, 0.2), 0px 8px 24px -3px rgba(207, 215, 232, 0.1);
+  }
+  .expenses_list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .expenses_list-item {
+    cursor: pointer;
+    background-color: #3f3d3d;
+    border-radius: 6px;
+    padding-inline: 24px;
+    padding-block: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .expense_detail {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .expense_title {
+    font-size: 16px;
+  }
+  .expense_detail {
+    font-size: 14px;
+  }
+  .expense_amount {
+    font-size: 18px;
+  }
+  .expense_delete {
+    font-size: 18px;
+    color: rgb(223, 47, 47);
+  }
+  
