@@ -16,3 +16,12 @@ httpRequest.interceptors.request.use((request) => {
   assign(request, configHeader);
   return request;
 });
+
+httpRequest.interceptors.response.use(
+  (response: any) => {
+    return response?.data as any;
+  },
+  async (error) => {
+    return Promise.reject(error);
+  }
+);
