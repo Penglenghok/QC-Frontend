@@ -37,7 +37,10 @@ export default function Home({}: Props) {
     );
     const payload: any = {
       name: formValues.name,
-      users: [user, ...participants.filter((item: any) => item.id !== user.id)],
+      userIds: [
+        user,
+        ...participants.filter((item: any) => item.id !== user.id),
+      ].map((item: any) => item.id),
     };
     dispatch(createGroupAction(payload) as any);
     form.resetFields();

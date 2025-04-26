@@ -54,8 +54,8 @@ const Expenses = () => {
     dispatch(
       createExpenseAction({
         ...expense,
-        group,
-        user: expense.paid_by,
+        groupId: group?.id,
+        userId: expense.paid_by.id,
         name: expense.title,
       })
     );
